@@ -1,13 +1,18 @@
-retail_cdc:
-  target: dev
+user:
   outputs:
-    dev:
+    default:
+      account: FRNDEDI-UL76795
+      auth_type: password
+      client_session_keep_alive: false
+      connect_retries: 3
+      connect_timeout: 30
+      database: RDL_TMS_SVT
+      password: Darksoul@2026M
+      retry_on_database_errors: true
+      role: null
+      schema: CA
+      threads: 6
       type: snowflake
-      account:   "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
-      user:      "{{ env_var('SNOWFLAKE_USER') }}"
-      password:  "{{ env_var('SNOWFLAKE_PASSWORD') }}"
-      role:      "{{ env_var('SNOWFLAKE_ROLE', 'ACCOUNTADMIN') }}"
-      database:  RDL_TMS_SVT
-      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'COMPUTE_WH') }}"
-      schema:    CA
-      threads:   4
+      user: cijom07
+      warehouse: COMPUTE_WH
+  target: default
